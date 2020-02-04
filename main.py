@@ -51,4 +51,5 @@ def startup():
         os.makedirs("./output")
 
 if __name__ == "__main__":
+    startup()
     app.run(debug=True, host='0.0.0.0')
