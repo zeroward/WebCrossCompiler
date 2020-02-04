@@ -39,7 +39,7 @@ def upload_file():
                 flash('HACKING DETECTED!!!!')
                 return redirect('/')
             ccomp.comphandle(filename, compiler, arch, outfile)
-            outfilepath = "./output" + outfile
+            outfilepath = "./output/" + outfile
             send_file(outfilepath)
             return redirect('/')
         else:
