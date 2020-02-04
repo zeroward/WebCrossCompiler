@@ -44,6 +44,11 @@ def upload_file():
             flash('Source Code Only Allowed!')
             return redirect(request.url)
 
+def startup():
+    if not os.path.exists("./input"):
+        os.makedirs("./input")
+    if not os.path.exists("./output"):
+        os.makedirs("./output")
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
