@@ -35,13 +35,13 @@ def upload_file():
             compiler = request.values['compiler']
             arch = request.values['architecture']
             outfile = request.values['output']
-            if not outfile.isalpha():
-                flash('HACKING DETECTED!!!!')
-                return redirect('/')
+            # if not outfile.isalpha():
+            #    flash('HACKING DETECTED!!!!')
+            #    return redirect('/')
             ccomp.comphandle(filename, compiler, arch, outfile)
             outfilepath = "./output/" + outfile
-            send_file(outfilepath)
-            return redirect('/')
+            return send_file(outfilepath, as_attachment=True)
+            #return redirect('/')
         else:
             flash('Source Code Only Allowed!')
             return redirect(request.url)
