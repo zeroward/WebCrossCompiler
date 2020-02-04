@@ -30,6 +30,8 @@ def comphandle(filename, comp, arch, outfile):
 
     print("Command is:")
     print("sudo ./{} bash -c \'{} {} -o {}\'".format(arch, comp, filename, outfile))
+    # File mgmt debug
+    os.rename(filename, outfile)
     os.rename(outfile, "/output/" + outfile)
     print("Sending back file {}".format(outfile))
 
