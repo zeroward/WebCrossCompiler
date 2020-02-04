@@ -3,7 +3,7 @@ import os
 import urllib.request
 from app import app
 import ccomp
-from flask import Flask, flash, request, redirect, render_template
+from flask import Flask, flash, request, redirect, render_template, send_file
 from werkzeug.utils import secure_filename
 
 ALLOWED_EXTENSIONS = set(['cs', 'c+', 'c'])
@@ -39,6 +39,8 @@ def upload_file():
                 flash('HACKING DETECTED!!!!')
                 return redirect('/')
             ccomp.comphandle(filename, compiler, arch, outfile)
+            outfilepath = "./output" + outfile
+            send_file(outfilepath)
             return redirect('/')
         else:
             flash('Source Code Only Allowed!')

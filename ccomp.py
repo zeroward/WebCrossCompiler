@@ -29,8 +29,8 @@ def comphandle(filename, comp, arch, outfile):
             arch = v
 
     print("Command is:")
-    print("sudo .\\{} bash -c \'{} {} -o {}\'".format(arch, comp, filename, outfile))
-
+    print("sudo ./{} bash -c \'{} {} -o {}\'".format(arch, comp, filename, outfile))
+    os.rename(outfile, "/output/" + outfile)
     print("Sending back file {}".format(outfile))
 
 
