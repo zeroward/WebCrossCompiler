@@ -32,9 +32,9 @@ def comphandle(filename, comp, arch, outfile):
     parsed_out = "./output/" + outfile
 
     print("Command is:")
-    print("sudo home/yeti/{} bash -c \'{} {} -o {}\'".format(arch, comp, filename, outfile))
+    print("sudo /home/yeti/{} bash -c \'$CC /work/WebCrossCompiler/input/{} -o /work/output/{}\'".format(arch, filename, outfile))
+    #os.system("sudo /home/yeti/{} bash -c \'$CC /work/WebCrossCompiler/input/{} -o /work/output/{}\'".format(arch, filename, outfile))
     # File mgmt debug
-    os.rename(parsed_in, parsed_out)
     print("Sending back file {}".format(outfile))
 
 
