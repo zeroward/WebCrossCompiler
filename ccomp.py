@@ -28,11 +28,13 @@ def comphandle(filename, comp, arch, outfile):
             print("Arch is {}".format(v))
             arch = v
 
+    parsed_in = "./input/" + filename
+    parsed_out = "./output/" + outfile
+
     print("Command is:")
     print("sudo ./{} bash -c \'{} {} -o {}\'".format(arch, comp, filename, outfile))
     # File mgmt debug
-    os.rename(filename, outfile)
-    os.rename(outfile, "/output/" + outfile)
+    os.rename(parsed_in, parsed_out)
     print("Sending back file {}".format(outfile))
 
 
