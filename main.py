@@ -42,7 +42,6 @@ def upload_file():
             ccomp.comphandle(filename, compiler, arch, outfile)
             outfilepath = "./output/" + outfile
             return send_file(outfilepath, as_attachment=True)
-            #return redirect('/')
         else:
             flash('Source Code Only Allowed!')
             return redirect(request.url)
