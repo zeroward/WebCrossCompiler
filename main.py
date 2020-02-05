@@ -45,6 +45,7 @@ def upload_file():
                 return send_file(outfilepath, as_attachment=True)
             except:
                 flash("Compilation Failed, Check File and Try again")
+                return redirect(request.uri)
         else:
             flash('Source Code Only Allowed!')
             return redirect(request.url)
