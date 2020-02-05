@@ -1,7 +1,13 @@
 <!doctype html>
+<style>
+    body {background-color: lightgrey};
+
+</style>
 <title>Yeti Online Cross Compiler</title>
 <div style="text-align: center;"> <h1>Yeti Cross Compiler - BETA</h1></div>
 <h2>Select a file to upload</h2>
+<h3>Support Types (As of 4 Feb 2020):</h3>
+<h4>C, C++, C#, GO</h4>
 <p>
 	{% with messages = get_flashed_messages() %}
 	  {% if messages %}
@@ -21,25 +27,23 @@
             <h2>File Output Name </h2><input type="text" name="output" required>
     </dl>
     <p>
-        <div style="border: 1px solid #000000">
-            <h1>Select Code Type</h1>
-            <select name="compiler" required>
-                <option value="C">C</option>
-                <option value="Cplusplus">C++</option>
-                <option value="Csharp">C#</option>
-                <option value="GOLang">GoLang</option>
-            </select>
-            <h1>Select Target Architecture</h1>
-            <select name="architecture" required>
-                <option value="mipsle">mipsle</option>
-                <option value="mipsbe">mipsbe</option>
-                <option value="ppc">ppc</option>
-                <option value="x86">x86</option>
-                <option value="x8664">x86_64</option>
-            </select>
-        </div>
+        <h1>Select Code Type</h1>
+        <select name="compiler" required>
+            <option value="C">C</option>
+            <option value="Cplusplus">C++</option>
+            <option value="Csharp">C#</option>
+            <option value="GOLang">GoLang</option>
+        </select>
+        <h1>Select Target Architecture</h1>
+        <select name="architecture" required>
+            <option value="mipsle">mipsle</option>
+            <option value="mipsbe">mipsbe</option>
+            <option value="ppc">ppc</option>
+            <option value="x86">x86</option>
+            <option value="x8664">x86_64</option>
+        </select>
     </p>
     <p>
-		<input type="submit" value="Submit">
+		<input type="submit" value="Compile">
 	</p>
 </form>

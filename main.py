@@ -41,7 +41,10 @@ def upload_file():
             print("File Saved, compiling")
             ccomp.comphandle(filename, compiler, arch, outfile)
             outfilepath = "./output/" + outfile
-            return send_file(outfilepath, as_attachment=True)
+            try:
+                return send_file(outfilepath, as_attachment=True)
+            except:
+                flash("Compilation Failed, Check File and Try again")
         else:
             flash('Source Code Only Allowed!')
             return redirect(request.url)
